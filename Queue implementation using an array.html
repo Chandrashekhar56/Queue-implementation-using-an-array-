@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script>
+var front_end=-1;
+var rear_end=-1;
+var size_of_queue=4;
+var queue=[size_of_queue];
+
+  function EnqueueOperation(value)
+	{
+    document.write("<br/>Enqueue Operation: ");
+		if(rear_end == size_of_queue-1)
+    {
+          document.write("queue is full(Insertion Not Possible)");
+		}
+		else if(front_end==-1  && rear_end==-1)
+		{
+          rear_end+=1;
+			    front_end+=1;
+			    queue[rear_end] = value;
+		}
+		else
+    {
+          rear_end+=1;
+          queue[rear_end] = value;
+    }
+	}
+  function DequeueOperation()
+  {
+       var delete_data;
+       document.write("<br/>Dequeue Operation: ");
+       if (front_end==-1 && rear_end==-1)
+       {
+              document.write(" queue is empty(Deletion Not Possible)");
+       }
+       else if(front_end == rear_end)
+       {
+               delete_data=queue[front_end];
+               front_end=-1;
+               rear_end=-1;
+       }
+       else
+       {
+               delete_data=queue[front_end];
+               front_end+=1;
+
+       }
+   }
+  function EnqueueDisplay()
+ 	{
+ 		 var x;
+ 		 document.write("<br/>Enqueue Display: ");
+ 		 if (front_end == -1 && rear_end==-1)
+     {
+ 			    document.write(" queue is Empty");
+ 		 }
+ 		 else
+     {
+             for (x = front_end; x<=rear_end; x++)
+             {
+                 document.write(queue[x]+ "<===");
+             }
+     }
+ 	}
+  function DequeueDisplay()
+  {
+    var x;
+    document.write("<br/>Dequeue Display: ");
+    if (front_end==-1 && rear_end==-1)
+    {
+         document.write("queue is Empty");
+    }
+    else
+    {
+         for (x = front_end; x <=rear_end; x++)
+         {
+             document.write("===>",+queue[x]);
+         }
+     }
+  }
+
+  function position_of_Front_and_Rear()
+  {
+       if (front_end==-1 && rear_end==-1)
+       {
+           document.write(" queue is Empty");
+       }
+       else
+       {
+           document.write("<br/>Position of Front is: %d" +queue[front_end]);
+           document.write("<br/>Position of Rear is: %d" +queue[rear_end]);
+       }
+  }
+
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(20);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(30);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(40);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(50);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(60);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(70);
+EnqueueDisplay();
+document.write("<br/>");
+EnqueueOperation(80);
+EnqueueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+DequeueOperation();
+DequeueDisplay();
+document.write("<br/>");
+document.write("<br/>Position of Front and Rear in queue: ");
+position_of_Front_and_Rear();
+document.write("<br/>");
+</script>
+</body>
+</html>
